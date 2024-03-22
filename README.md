@@ -24,3 +24,11 @@ Alur:
 - Program memasukkan informasi seperti file html, status line, dan length ke dalam response.
 - Program mengirimkan response kepada user.
 Pada program ini, request apapun akan tetap mendapatkan response yang sama. (tidak ada validasi jenis request).
+
+
+
+## Commit 3 Reflection Notes
+- Sebelumnya request apapun akan menghasilkan response yang sama.
+- Buat file ```404.html``` untuk meng-handle request page not found
+- Kita menambahkan if-else untuk validasi request. Jika Url pathnya kosong (root), akan mengembalikan halaman html seperti sebelumnya. Jika tidak, misal ditambahkan ```/hello``` akan mengembalikan halaman ```404.html``` (karena untuk sekarang belum ada implementasi untuk path tersebut).
+- Tambahkan if else block pada code untuk memeriksa request line.
