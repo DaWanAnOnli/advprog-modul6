@@ -32,3 +32,11 @@ Pada program ini, request apapun akan tetap mendapatkan response yang sama. (tid
 - Buat file ```404.html``` untuk meng-handle request page not found
 - Kita menambahkan if-else untuk validasi request. Jika Url pathnya kosong (root), akan mengembalikan halaman html seperti sebelumnya. Jika tidak, misal ditambahkan ```/hello``` akan mengembalikan halaman ```404.html``` (karena untuk sekarang belum ada implementasi untuk path tersebut).
 - Tambahkan if else block pada code untuk memeriksa request line.
+
+## Commit 4 Reflection Notes
+- Mengganti ```if``` dengan ```match``` (semacam switch case) untuk case biasa, sleep, dan lain-lain.
+- Untuk case sleep, server akan dibuat delay 5 detik untuk simulasi response yang lambat.
+- Delay 5 detik bukan untuk setiap request, namun setiap request menambah delay 5 detik. Jadi jika ada 10 request bersamaan, akan ada yang menunggu 5 detik, 10 detik, dan seterusnya hingga 50 detik.
+- Aplikasi menjadi tidak efisien karena dijalankan secara sekuensial. Jika dijalankan secara paralel, masing-masing user akan menunggu maksimal 5 detik.
+
+
