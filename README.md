@@ -39,4 +39,11 @@ Pada program ini, request apapun akan tetap mendapatkan response yang sama. (tid
 - Delay 5 detik bukan untuk setiap request, namun setiap request menambah delay 5 detik. Jadi jika ada 10 request bersamaan, akan ada yang menunggu 5 detik, 10 detik, dan seterusnya hingga 50 detik.
 - Aplikasi menjadi tidak efisien karena dijalankan secara sekuensial. Jika dijalankan secara paralel, masing-masing user akan menunggu maksimal 5 detik.
 
+## Commit 5 Reflection Notes
+- Kita membuat implementasi thread pool agar server dapat berjalan secara concurrent
+- Pertama kita buat agar setiap request akan diassign 1 thread. Namun ini tidak ideal karena rentan terhadap serangan Denial of Service
+- Setelah itu kita implementasikan pembatasan jumlah thread dalam satu waktu.
+- Langkah berikutnya adalah membuat tempat untuk menyimpan thread-thread yang akan digunakan.
+- Lalu kita membuat mekanisme agar thread dapat langsung dibuat saat runtime dan menunggu sampai request datang
+- Terakhir, kita membuat mekanisme untuk mengambil code dari queue yang ada di thread pool dan meng-assignnya menggunakan channel ke thread yang tersedia.
 
